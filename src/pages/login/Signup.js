@@ -117,7 +117,7 @@ const Signup = () => {
                 <p>Already have an account? <Link to={'/login'} className="text-secondary">Login</Link></p>
                 <div className="divider">OR</div>
             </form>
-            <button onClick={handleGoogleLogin} className="btn btn-outline w-full max-w-sm">SignUp With Google</button>
+            <button onClick={handleGoogleLogin} className="btn btn-outline btn-info w-full max-w-sm">SignUp With Google</button>
         </div>
     );
 };
