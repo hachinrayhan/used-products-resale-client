@@ -58,6 +58,15 @@ const Signup = () => {
         <div className='w-full max-w-sm mx-auto shadow-xl p-8 rounded-md'>
             <h2 className='text-xl'>Sign Up</h2>
             <form onSubmit={handleSubmit(handleSignup)} className='form-control'>
+                {/* Account Type */}
+                <label className="label">
+                    <span className="label-text">Create your account as</span>
+                </label>
+                <select {...register("account_type", { required: "Select your account type" })} className="select select-bordered w-full max-w-sm">
+                    <option>Buyer</option>
+                    <option>Seller</option>
+                </select>
+
                 {/* Name */}
                 <label className="label">
                     <span className="label-text">Name</span>

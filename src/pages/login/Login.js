@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 // import { AuthContext } from '../../contexts/AuthProvider';
 // import useToken from '../../hooks/useToken';
-// import PasswordResetModal from './PasswordResetModal';
+import PasswordResetModal from './PasswordResetModal';
 
 const Login = () => {
     // const { loginUser } = useContext(AuthContext);
@@ -68,7 +68,7 @@ const Login = () => {
                 <div className="divider">OR</div>
             </form>
             <button className="btn btn-outline w-full max-w-sm">Continue With Google</button>
-            {/* <PasswordResetModal></PasswordResetModal> */}
+            <PasswordResetModal></PasswordResetModal>
         </div>
     );
 };
