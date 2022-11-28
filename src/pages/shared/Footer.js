@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -6,23 +7,23 @@ const Footer = () => {
             <div className='footer lg:place-items-center'>
                 <div>
                     <span className="footer-title">Services</span>
-                    <a href='/' className="link link-hover">Branding</a>
-                    <a href='/' className="link link-hover">Design</a>
-                    <a href='/' className="link link-hover">Marketing</a>
-                    <a href='/' className="link link-hover">Advertisement</a>
+                    <Link className="link link-hover">Branding</Link>
+                    <Link className="link link-hover">Design</Link>
+                    <Link className="link link-hover">Marketing</Link>
+                    <Link className="link link-hover">Advertisement</Link>
                 </div>
                 <div>
                     <span className="footer-title">Company</span>
-                    <a href='/' className="link link-hover">About us</a>
-                    <a href='/' className="link link-hover">Contact</a>
-                    <a href='/' className="link link-hover">Jobs</a>
-                    <a href='/' className="link link-hover">Press kit</a>
+                    <Link className="link link-hover">About us</Link>
+                    <Link className="link link-hover">Contact</Link>
+                    <Link className="link link-hover">Jobs</Link>
+                    <Link className="link link-hover">Press kit</Link>
                 </div>
                 <div>
                     <span className="footer-title">Legal</span>
-                    <a href='/' className="link link-hover">Terms of use</a>
-                    <a href='/' className="link link-hover">Privacy policy</a>
-                    <a href='/' className="link link-hover">Cookie policy</a>
+                    <Link className="link link-hover">Terms of use</Link>
+                    <Link className="link link-hover">Privacy policy</Link>
+                    <Link className="link link-hover">Cookie policy</Link>
                 </div>
             </div>
             <div className='mt-8'>
