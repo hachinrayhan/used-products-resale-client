@@ -6,7 +6,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 import useToken from '../../hooks/useToken';
 
 const Signup = () => {
-    const { createUser, updateUser, loading, setLoading } = useContext(AuthContext);
+    const { createUser, createUserWithGoogle, updateUser, loading, setLoading } = useContext(AuthContext);
     const [error, setError] = useState('');
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [userEmail, setUserEmail] = useState('');
@@ -61,7 +61,21 @@ const Signup = () => {
 
     //Signup with google
     const handleGoogleLogin = () => {
-
+        setError('');
+        createUserWithGoogle()
+            .then(result => {
+                const user = result.user;
+                setUserEmail(user.email);
+                console.log(user);
+                saveUser(user.displayName, user.email, 'Buyer');
+                toast.success('SignUp Successful');
+                setLoading(false);
+            })
+            .catch(err => {
+                console.log(err)
+                setError(err.message);
+                setLoading(false);
+            })
     }
 
     return (
