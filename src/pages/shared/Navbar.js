@@ -1,29 +1,30 @@
 import React, { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
-// import { AuthContext } from '../../contexts/AuthProvider';
+import { AuthContext } from '../../contexts/AuthProvider';
 
 const Navbar = () => {
-    // const { user, signOutUser } = useContext(AuthContext);
+    const { user, signOutUser } = useContext(AuthContext);
 
     const handleSignOut = () => {
-        // signOutUser()
-        //     .then(() => {
-        //         alert('You have successfully signed out')
-        //     })
-        //     .catch(err => console.log(err))
+        signOutUser()
+            .then(() => {
+                toast('SignOut successful');
+            })
+            .catch(err => console.log(err))
     }
 
 
     const navItems = <>
         <li><Link to={'/'}>Home</Link></li>
         <li><Link to={'/appointment'}>Appointment</Link></li>
-        <li><Link to={'/contact'}>Contact Us</Link></li>
-        {/* {
+        <li><Link to={'/blog'}>Blog</Link></li>
+        {
             user?.uid ? <>
                 <li><Link to={'/dashboard'}>Dashboard</Link></li>
                 <li><button onClick={handleSignOut}>SignOut</button></li>
             </> : <li><Link to={'/login'}>Login</Link></li>
-        } */}
+        }
     </>
     return (
         <div className="navbar bg-base-100">
