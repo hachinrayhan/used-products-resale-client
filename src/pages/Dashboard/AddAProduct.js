@@ -41,8 +41,6 @@ const AddAProduct = () => {
                         contactNumber: data.contactNumber,
                     }
 
-                    console.log(product);
-
                     //save product to the database
                     fetch('http://localhost:5000/products', {
                         method: 'POST',
@@ -54,9 +52,8 @@ const AddAProduct = () => {
                     })
                         .then(res => res.json())
                         .then(data => {
-                            console.log(data);
                             toast.success('product added successfully');
-                            navigate('/dashboard/my-products');
+                            navigate('/dashboard');
                         })
                 }
             })
@@ -124,9 +121,9 @@ const AddAProduct = () => {
 
                 {/* Description */}
                 <label className="label">
-                    <span className="label-text">Description</span>
+                    <span className="label-text">Description [ use comma( , ) to separate specification ]</span>
                 </label>
-                <textarea type="text" placeholder='Product Details' {...register("details", { required: "Provide your product details" })} className="input input-bordered w-full max-w-xl" />
+                <textarea type="text" placeholder='Example: size: 6inch, ram: 6gb, rom: 128gb ...' {...register("details", { required: "Provide your product details" })} className="input input-bordered w-full max-w-xl" />
                 {errors.details && <p className='text-red-700'>{errors.details?.message}</p>}
 
                 {/* location */}

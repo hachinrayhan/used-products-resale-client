@@ -30,8 +30,8 @@ const DashBoardLayout = () => {
                         }
                         {
                             userType === 'Seller' && <>
+                                <li><Link to={'/dashboard'}>My Products</Link></li>
                                 <li><Link to={'/dashboard/add-product'}>Add A Product</Link></li>
-                                <li><Link to={'/dashboard/my-products'}>My Products</Link></li>
                                 <li><Link to={'/dashboard/my-buyers'}>My Buyers</Link></li>
                             </>
                         }
