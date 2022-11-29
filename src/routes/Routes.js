@@ -6,6 +6,7 @@ import MyProducts from "../pages/Dashboard/MyProducts";
 import Home from "../pages/Home/Home";
 import Login from "../pages/login/Login";
 import Signup from "../pages/login/Signup";
+import PrivateRoute from "./PrivateRoute";
 
 
 export const router = createBrowserRouter([
@@ -29,7 +30,7 @@ export const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashBoardLayout></DashBoardLayout>,
+        element: <PrivateRoute><DashBoardLayout></DashBoardLayout></PrivateRoute>,
         children: [
             {
                 path: '/dashboard/add-product',
