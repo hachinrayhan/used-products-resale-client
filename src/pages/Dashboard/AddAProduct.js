@@ -75,7 +75,7 @@ const AddAProduct = () => {
                     <span className="label-text">Category</span>
                 </label>
                 <select {...register('category')} className="select select-bordered w-full max-w-xl">
-                    <option>Apple</option>
+                    <option>iPhone</option>
                     <option>Samsung</option>
                     <option>Google</option>
                     <option>Others</option>
