@@ -1,13 +1,20 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashBoardLayout from "../layouts/DashBoardLayout";
 import Main from "../layouts/Main";
+import Blog from "../pages/Blog";
 import AddAProduct from "../pages/Dashboard/AddAProduct";
+import Buyers from "../pages/Dashboard/Buyers";
+import MyOrders from "../pages/Dashboard/MyOrders";
 import MyProducts from "../pages/Dashboard/MyProducts";
+import Sellers from "../pages/Dashboard/Sellers";
 import Home from "../pages/Home/Home";
 import Login from "../pages/login/Login";
 import Signup from "../pages/login/Signup";
+import NotFound from "../pages/NotFound";
 import PhoneCategories from "../pages/PhoneCategories/PhoneCategories";
+import BuyerRoute from "./BuyerRoute";
 import PrivateRoute from "./PrivateRoute";
+import SellerRoute from "./SellerRoute";
 
 
 export const router = createBrowserRouter([
@@ -20,6 +27,10 @@ export const router = createBrowserRouter([
                 element: <Home></Home>
             },
             {
+                path: '/blog',
+                element: <Blog></Blog>
+            },
+            {
                 path: '/login',
                 element: <Login></Login>
             },
@@ -30,7 +41,7 @@ export const router = createBrowserRouter([
             {
                 path: '/category/:name',
                 loader: ({ params }) => fetch(`http://localhost:5000/category/${params.name}`),
-                element: <PhoneCategories></PhoneCategories>
+                element: <PrivateRoute><PhoneCategories></PhoneCategories></PrivateRoute>
             }
         ]
     },
@@ -39,14 +50,30 @@ export const router = createBrowserRouter([
         element: <PrivateRoute><DashBoardLayout></DashBoardLayout></PrivateRoute>,
         children: [
             {
-                path: '/dashboard',
-                element: <MyProducts></MyProducts>
+                path: '/dashboard/my-products',
+                element: <SellerRoute><MyProducts></MyProducts></SellerRoute>
             },
             {
                 path: '/dashboard/add-product',
-                element: <AddAProduct></AddAProduct>
+                element: <SellerRoute><AddAProduct></AddAProduct></SellerRoute>
+            },
+            {
+                path: '/dashboard/my-orders',
+                element: <BuyerRoute><MyOrders></MyOrders></BuyerRoute>
+            },
+            {
+                path: '/dashboard/sellers',
+                element: <Sellers></Sellers>
+            },
+            {
+                path: '/dashboard/buyers',
+                element: <Buyers></Buyers>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <NotFound></NotFound>
     }
 ]);
 

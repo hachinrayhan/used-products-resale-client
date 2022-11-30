@@ -8,7 +8,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 const AddAProduct = () => {
     const { user } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const navigate = useNavigate(); // for navigating after adding doctor successfully
+    const navigate = useNavigate();
 
     const imgHostKey = process.env.REACT_APP_imgbb_key;
 
