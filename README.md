@@ -8,21 +8,21 @@ adminPassword: loveForPHTeam
 Dependencies:
 ---------------
 For Client Side:
-react router dom
-tailwind
-daisyui
-material ui
-react hot toast
-react hook form
-tanstack query
+react router dom,
+tailwind,
+daisyui,
+material ui,
+react hot toast,
+react hook form,
+tanstack query,
 firebase
 
 For Server Side: 
-express
-cors
-dotenv
-mongodb
-jsonwebtoken
+express,
+cors,
+dotenv,
+mongodb,
+jsonwebtoken,
 
 Features:
 ------------------------
