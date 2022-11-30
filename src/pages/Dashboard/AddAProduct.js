@@ -28,7 +28,7 @@ const AddAProduct = () => {
                     console.log(imgData.data.url);
                     const product = {
                         photo: imgData.data.url,
-                        category: data.category,
+                        category: data.category.toLowerCase(),
                         productName: data.productName,
                         periodOfUse: data.periodOfUse,
                         condition: data.condition,
