@@ -20,7 +20,7 @@ const MyOrders = () => {
     if (error) return 'An error has occurred: ' + error.message
     return (
         <div>
-            <h2 className='text-3xl underline'>My Products</h2>
+            <h2 className='text-3xl underline'>My Orders</h2>
             {
                 orders.length === 0 ? <h2 className='text-3xl'> You didn't book any product yet. Please Book A Product first</h2> :
                     <div className="overflow-x-auto my-8">
