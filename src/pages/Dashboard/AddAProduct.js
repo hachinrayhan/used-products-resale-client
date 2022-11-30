@@ -42,7 +42,7 @@ const AddAProduct = () => {
                     }
 
                     //save product to the database
-                    fetch('http://localhost:5000/products', {
+                    fetch('https://used-products-resale-server-neon.vercel.app/products', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

@@ -5,7 +5,7 @@ const useUserType = email => {
     const [isUserTypeLoading, setIsUserTypeLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/type/${email}`)
+            fetch(`https://used-products-resale-server-neon.vercel.app/users/type/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     setUserType(data.user_type);

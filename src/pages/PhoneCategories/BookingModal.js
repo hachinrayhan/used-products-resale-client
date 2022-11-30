@@ -25,7 +25,7 @@ const BookingModal = ({ product }) => {
         console.log(booking);
 
         // save booking to the database
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://used-products-resale-server-neon.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -37,7 +37,7 @@ const BookingModal = ({ product }) => {
             .then(data => {
                 if (data.acknowledged) {
                     //change product status/availability
-                    fetch(`http://localhost:5000/products/status/${product._id}`, {
+                    fetch(`https://used-products-resale-server-neon.vercel.app/products/status/${product._id}`, {
                         method: 'PUT',
                         headers: {
                             authorization: `bearer ${localStorage.getItem('token')}`

@@ -41,7 +41,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/category/:name',
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.name}`),
+                loader: ({ params }) => fetch(`https://used-products-resale-server-neon.vercel.app/category/${params.name}`),
                 element: <PrivateRoute><PhoneCategories></PhoneCategories></PrivateRoute>
             }
         ]

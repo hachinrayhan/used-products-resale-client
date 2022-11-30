@@ -6,7 +6,7 @@ import { AuthContext } from '../../contexts/AuthProvider';
 
 const MyProducts = () => {
     const { user } = useContext(AuthContext);
-    const url = `http://localhost:5000/products?email=${user?.email}`;
+    const url = `https://used-products-resale-server-neon.vercel.app/products?email=${user?.email}`;
 
     const { isLoading, error, refetch, data: products } = useQuery({
         queryKey: ['products'],

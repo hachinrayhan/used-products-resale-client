@@ -3,7 +3,7 @@ import React from 'react';
 
 const Sellers = () => {
 
-    const url = 'http://localhost:5000/users/sellers';
+    const url = 'https://used-products-resale-server-neon.vercel.app/users/sellers';
 
     const { isLoading, error, data: sellers } = useQuery({
         queryKey: ['sellers'],
