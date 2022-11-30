@@ -12,6 +12,7 @@ import Login from "../pages/login/Login";
 import Signup from "../pages/login/Signup";
 import NotFound from "../pages/NotFound";
 import PhoneCategories from "../pages/PhoneCategories/PhoneCategories";
+import AdminRoute from "./AdminRoute";
 import BuyerRoute from "./BuyerRoute";
 import PrivateRoute from "./PrivateRoute";
 import SellerRoute from "./SellerRoute";
@@ -63,11 +64,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/sellers',
-                element: <Sellers></Sellers>
+                element: <AdminRoute><Sellers></Sellers></AdminRoute>
             },
             {
                 path: '/dashboard/buyers',
-                element: <Buyers></Buyers>
+                element: <AdminRoute><Buyers></Buyers></AdminRoute>
             }
         ]
     },
