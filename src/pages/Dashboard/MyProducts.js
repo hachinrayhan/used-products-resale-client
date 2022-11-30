@@ -8,7 +8,7 @@ const MyProducts = () => {
     const { user } = useContext(AuthContext);
     const url = `https://used-products-resale-server-neon.vercel.app/products?email=${user?.email}`;
 
-    const { isLoading, error, refetch, data: products } = useQuery({
+    const { isLoading, error, data: products } = useQuery({
         queryKey: ['products'],
         queryFn: () =>
             fetch(url, {
